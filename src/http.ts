@@ -17,12 +17,14 @@ app.get("/pages/client", (request, response) => {
   return response.render("html/client.html");
 });
 
+app.get("/pages/admin", (request, response) => {
+  return response.render("html/admin.html");
+});
+
 const http = createServer(app); //criando protocolo http
 const io = new Server(http); // criando protocolo ws
 
-io.on("connection", (socket: Socket) => {
-
-});
+io.on("connection", (socket: Socket) => {});
 
 app.use(express.json());
 app.use(routes);
